@@ -58,4 +58,14 @@ header {
   cursor: pointer;
 }
 
+.meme--image{
+  position: absolute;
+  width: 477px;
+  height: 268px;
+  left: 36px;
+  top: 227px;
+
+  border-radius: 2px;
+}
+
 
