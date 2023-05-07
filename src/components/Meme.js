@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Meme() {
     const [meme, setMeme] = useState({
@@ -6,17 +6,22 @@ export default function Meme() {
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg",
     });
-    const [allMemesImages, setAllMemeImages] = useState();
+    const [allMemes, setAllMemes] = useState([]);
+
+    useEffect(function() {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    },[])
 
     function generateMeme() {
-        // const memeArray = memeData.data.meme
-        // const randomNumber = Math.floor(Math.random * memeArray.length)
-        // const url = memeArray[randomImage].url
-        // setMeme(prevMeme => ({
-        //     ...prevMeme,
-        //     randomImage: url,
-        // }))
-    }
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[randomNumber].url
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: url,
+        }))
+    }    
 
     function handleChange(e) {
         const {name, value} = e.target;
