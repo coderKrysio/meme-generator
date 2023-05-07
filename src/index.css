@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -49,23 +51,56 @@ header {
 }
 
 .form--button {
+  width: 300px;
   grid-column: 1 / -1;
   font-family: "Karla", sans-serif;
   border-radius: 5px;
+  font-size: 20px;
+  line-height: 19px;
+  text-align: center;
   background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
   color: white;
   border: none;
   cursor: pointer;
+  padding: 10px 20px;
+  margin: auto;
+}
+
+.meme{
+  width: 477px;
+  height: 268px;
+  border-radius: 2px;
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .meme--image{
-  position: absolute;
   width: 477px;
   height: 268px;
-  left: 36px;
-  top: 227px;
-
   border-radius: 2px;
+}
+
+.meme--text{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Impact';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.top{
+  margin-top: 20px;
+}
+
+.bottom{
+  top: 75%;
 }
 
 
